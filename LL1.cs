@@ -5,15 +5,18 @@ namespace ConsoleApp1
     class Program
     {
         static void Main(string[] args)
-        {  
+        {
+            CityMap cm = new CityMap();
+            cm.MakeACity();
+            cm.NodeTraversal(CityMap.head);
 
         }
     }
 
     class CityMap
     {
-        City head;
-        City tail
+        public static City head;
+        public City tail;
         bool thereIsAnotherCity = true;
 
         public void MakeACity()
@@ -23,26 +26,35 @@ namespace ConsoleApp1
             head.previousCity = null;
         }
         
-        public void LinkTraversal(City a)
+        public void NodeTraversal(City a)
         {
-            while(thereIsAnotherCity) {
-                Console.WriteLine("{0}", a.CityName);
+            try { 
+                while(thereIsAnotherCity) {
+                    Console.WriteLine("{0}", a.CityName);
+                    a = a.nextCity;
+                }
             }
-            
+            catch (Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+                Console.WriteLine(e.Message);
+            }
         }
     }
     class City
-    {
+    {   // City is going to a NODE in a LINKED LIST
+
         public City(string cityName)
         {
             this.CityName = cityName;
         }
-        // City is going to a NODE in a LINKED LIST
+       
 
-        public City previousCity a;
-        public City nextCity b;
+        public City previousCity;
+        public City nextCity;
 
         public String CityName;
 
     }
 }
+
