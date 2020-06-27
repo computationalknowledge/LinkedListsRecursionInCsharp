@@ -29,7 +29,7 @@ namespace ConsoleApp1
         public void NodeTraversal(City a)
         {
             try { 
-                while(thereIsAnotherCity) {
+                while(a.nextCity != null) {
                     Console.WriteLine("{0}", a.CityName);
                     a = a.nextCity;
                 }
@@ -57,4 +57,3 @@ namespace ConsoleApp1
 
     }
 }
-
