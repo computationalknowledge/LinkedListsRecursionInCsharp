@@ -1,0 +1,17 @@
+Notes about Recursion:
+IN our recursive call of the recursion method:
+We must have an IN THEN statement:
+This is the pseudo code for the pattern of recursion
+In computer science, this is part of 
+Algorithms and Data Structures.
+The big issue with RECURSION IS: HOW do transmit information about the variable we are recursing on from one stack frame to the next stack frame
+method Recursion{
+if (guard variable == 0) // if you have met the condition where
+					// you want to STOP recursing
+	{return 0;}		// return a definite value
+// this is the way you escape from the INFINITE recursion !
+
+else {
+	// if you have not met your GUARD condition, then you recurse
+	Rucursion();
+}
