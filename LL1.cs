@@ -16,16 +16,29 @@ namespace ConsoleApp1
     class CityMap
     {
         public static City head;
+        // #todo: implmented a doubly linked list: forward and backward
+        // specify which city is the tail
+        // traverse the list by starting at the tail
+        // follow the linked all the way back to the head
         public City tail;
-        bool thereIsAnotherCity = true;
 
         public void MakeACity()
         {
             head = new City("Toronto");
-            head.nextCity = new City("Pickering");
+
             head.previousCity = null;
+
+            City Pickering = new City("Pickering");
+            City Ajax = new City("Ajax");
+            City Oshawa = new City("Oshawa");
+            City Elmer = new City("Elmer");
+
+            head.nextCity = Pickering;
+            Pickering.nextCity = Oshawa;
+            Oshawa.nextCity = Elmer;
+
         }
-        
+
         public void NodeTraversal(City a)
         {
             try { 
